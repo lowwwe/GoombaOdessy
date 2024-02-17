@@ -107,6 +107,7 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 	m_goomba1.update();
+	m_goomba2.update();
 }
 
 /// <summary>
@@ -117,6 +118,7 @@ void Game::render()
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_background);
 	m_goomba1.draw(m_window);
+	m_goomba2.draw(m_window);
 	m_window.display();
 }
 
@@ -140,7 +142,13 @@ void Game::setupSprite()
 void Game::setupGoombas()
 {
 	m_goomba1.setup(sf::Vector2f{ 15.0f,445.f });
-	m_goomba1.m_heading = Direrction::Right;
+	m_goomba1.m_heading = Direrction::Left;
 	m_goomba1.setBoundry(36.0f, true);
 	m_goomba1.setBoundry(105.0f, false);
+
+	m_goomba2.setup(sf::Vector2f{ 400.0f, 365.0f });
+	m_goomba2.m_heading = Direrction::Left;
+	m_goomba2.setBoundry(400.0f, true);
+	m_goomba2.setBoundry(485.0f, false);
+	m_goomba2.m_frameCounter = 14.0f;
 }

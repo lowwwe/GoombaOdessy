@@ -14,6 +14,8 @@ public:
 	void update();
 	void checkBoundry();
 	void animate();
+	float m_frameCounter{ 0.0f }; // frame counter
+
 private:
 	sf::Vector2f m_location; // location of Goomba
 	
@@ -21,7 +23,7 @@ private:
 	float m_leftBoundry{ -1.0f}; // left barrier
 	float m_rightBoundry{-1.0f}; // right barrier
 	int m_frameNo{ 0 }; // current frame
-	float m_frameCounter{ 0.0f }; // frame counter
+	
 	static float s_frameIncrtement; // frame increment
 
 
