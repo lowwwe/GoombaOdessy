@@ -10,6 +10,10 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
+#include "Goomba.h"
+
+
+
 
 class Game
 {
@@ -33,7 +37,7 @@ private:
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Sprite m_background; // sprite for background
-	
+	Goomba m_goomba1;
 	bool m_exitGame; // control exiting game
 
 };

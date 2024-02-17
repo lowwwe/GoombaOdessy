@@ -22,12 +22,18 @@
 
 #include "Game.h"
 
+sf::Texture textureAtlas;  // all textures used in game
+
 /// <summary>
 /// main enrtry point
 /// </summary>
 /// <returns>success or failure</returns>
+/// 
+/// 
+
 int main()
 {
+
 	Game game;
 	game.run();
 

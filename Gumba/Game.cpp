@@ -21,7 +21,7 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
 	m_exitGame{false} //when true game will exit
 {
-	
+	m_goomba1.setup(sf::Vector2f{15.0f,445.f});
 	setupSprite(); // load texture
 }
 
@@ -113,14 +113,15 @@ void Game::render()
 {
 	m_window.clear(sf::Color::White);
 	m_window.draw(m_background);
+	m_goomba1.draw(m_window);
 	m_window.display();
 }
 
 
 
 /// <summary>
-/// load the texture and setup the sprite for the logo
-/// </summary>
+/// load the texture and setup the sprite the game
+/// 
 void Game::setupSprite()
 {
 	if (!textureAtlas.loadFromFile("ASSETS\\IMAGES\\atlas.png"))

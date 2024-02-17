@@ -3,5 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 
+enum class Direrction
+{
+	None,
+	Left,
+	Right
+};
 
-sf::Texture textureAtlas;  // all textures used in game
+extern sf::Texture textureAtlas;  // all textures used in game
