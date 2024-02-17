@@ -141,6 +141,6 @@ void Game::setupGoombas()
 {
 	m_goomba1.setup(sf::Vector2f{ 15.0f,445.f });
 	m_goomba1.m_heading = Direrction::Right;
-	m_goomba1.setBoundry(10.0f, true);
-	m_goomba1.setBoundry(85.0f, false);
+	m_goomba1.setBoundry(36.0f, true);
+	m_goomba1.setBoundry(105.0f, false);
 }

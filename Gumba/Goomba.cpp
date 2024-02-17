@@ -1,5 +1,8 @@
 #include "Goomba.h"
 
+
+float Goomba::s_frameIncrtement{0.35f};
+
 void Goomba::draw(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_sprite);
@@ -11,6 +14,7 @@ void Goomba::setup(sf::Vector2f t_location)
 	m_sprite.setTextureRect(sf::IntRect{ 0,0,52,54 });
 	m_location = t_location;
 	m_sprite.setPosition(m_location);
+	m_sprite.setOrigin(26.0f, 0.0f);
 
 }
 
@@ -42,6 +46,7 @@ void Goomba::move()
 
 void Goomba::update()
 {
+	animate();
 	move();
 	checkBoundry();
 	m_sprite.setPosition(m_location);
@@ -52,9 +57,28 @@ void Goomba::checkBoundry()
 	if (m_heading == Direrction::Right && m_location.x > m_rightBoundry)
 	{
 		m_heading = Direrction::Left;
+		m_sprite.setScale(1.0f, 1.0f);
 	}
 	if (m_heading == Direrction::Left && m_location.x < m_leftBoundry)
 	{
 		m_heading = Direrction::Right;
+		m_sprite.setScale(-1.0f, 1.0f);
+	}
+}
+
+void Goomba::animate()
+{
+	int frame;
+	int row;
+	int column;
+	const int FRAME_WIDTH = 52;
+	const int FRAME_HEIGHT = 54;
+	m_frameCounter += s_frameIncrtement;
+	frame = static_cast<int>(m_frameCounter) % 20;
+	if (m_frameNo != frame)
+	{
+		row = frame / 10;
+		column = frame % 10;
+		m_sprite.setTextureRect(sf::IntRect{column* FRAME_WIDTH, row * FRAME_HEIGHT, FRAME_WIDTH, FRAME_HEIGHT});
 	}
 }
