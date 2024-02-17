@@ -34,6 +34,7 @@ private:
 	
 
 	void setupSprite();
+	void setupGoombas();
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Sprite m_background; // sprite for background

@@ -21,13 +21,15 @@ Game::Game() :
 	m_window{ sf::VideoMode{ 800U, 600U, 32U }, "SFML Game" },
 	m_exitGame{false} //when true game will exit
 {
-	m_goomba1.setup(sf::Vector2f{15.0f,445.f});
+	
+	
 	setupSprite(); // load texture
+	setupGoombas();
 }
 
 /// <summary>
 /// default destructor we didn't dynamically allocate anything
-/// so we don't need to free it, but mthod needs to be here
+/// so we don't need to free it, but method needs to be here
 /// </summary>
 Game::~Game()
 {
@@ -104,6 +106,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	m_goomba1.update();
 }
 
 /// <summary>
@@ -132,4 +135,12 @@ void Game::setupSprite()
 	m_background.setTextureRect(sf::IntRect{ 0,507,1280,800 });
 	m_background.setScale(800.0f / 1280.0f, 600.0f / 800.0f);
 	
+}
+
+void Game::setupGoombas()
+{
+	m_goomba1.setup(sf::Vector2f{ 15.0f,445.f });
+	m_goomba1.m_heading = Direrction::Right;
+	m_goomba1.setBoundry(10.0f, true);
+	m_goomba1.setBoundry(85.0f, false);
 }
