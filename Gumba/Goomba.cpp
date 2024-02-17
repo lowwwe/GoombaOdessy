@@ -3,6 +3,12 @@
 
 float Goomba::s_frameIncrtement{0.35f};
 
+Goomba::Goomba()
+{
+	m_frameNo = std::rand() % 20;
+	m_frameCounter = m_frameNo;
+}
+
 void Goomba::draw(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_sprite);

@@ -33,7 +33,7 @@ sf::Texture textureAtlas;  // all textures used in game
 
 int main()
 {
-
+	std::srand(100U);
 	Game game;
 	game.run();
 

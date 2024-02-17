@@ -10,4 +10,5 @@ enum class Direrction
 	Right
 };
 
+const int NO_OF_GOOMBAS = 3;
 extern sf::Texture textureAtlas;  // all textures used in game

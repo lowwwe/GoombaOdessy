@@ -6,6 +6,7 @@
 class Goomba
 {
 public:
+	Goomba();
 	void draw(sf::RenderWindow& t_window);
 	void setup(sf::Vector2f t_location);
 	Direrction m_heading; // direction of walking
