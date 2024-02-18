@@ -83,6 +83,7 @@ void Goomba::animate()
 	frame = static_cast<int>(m_frameCounter) % 20;
 	if (m_frameNo != frame)
 	{
+		m_frameNo = frame;
 		row = frame / 10;
 		column = frame % 10;
 		m_sprite.setTextureRect(sf::IntRect{column* FRAME_WIDTH, row * FRAME_HEIGHT, FRAME_WIDTH, FRAME_HEIGHT});

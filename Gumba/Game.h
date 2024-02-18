@@ -39,6 +39,7 @@ private:
 
 	sf::RenderWindow m_window; // main SFML window
 	sf::Sprite m_background; // sprite for background
+	sf::Sprite m_logoSprite; // SPRITE FOR LOGO
 	Goomba m_goombas[NO_OF_GOOMBAS];
 	
 	bool m_exitGame; // control exiting game

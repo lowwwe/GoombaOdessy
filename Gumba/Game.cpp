@@ -123,6 +123,7 @@ void Game::render()
 	{
 		m_goombas[i].draw(m_window);
 	}
+	m_window.draw(m_logoSprite);
 	m_window.display();
 }
 
@@ -141,6 +142,10 @@ void Game::setupSprite()
 	m_background.setTextureRect(sf::IntRect{ 0,507,1280,800 });
 	m_background.setScale(800.0f / 1280.0f, 600.0f / 800.0f);
 	
+	m_logoSprite.setTexture(textureAtlas);
+	m_logoSprite.setTextureRect(sf::IntRect{ 520,0,684,507 });
+	m_logoSprite.setPosition(0.0f, 0.0f);
+	m_logoSprite.setScale(0.5f, 0.5f);
 }
 
 void Game::setupGoombas()
